@@ -4,12 +4,20 @@ def arithmetic_arranger(problems, mostrar=False):
 	segundo = [s[2] for s in lista]
 	resposta = [eval(r) for r in problems]
 
-	for i, v in enumerate(lista):
-		print(
-			v[0].rjust(2*3), "\n",
-			v[1], v[2].rjust(3), "\n", "-----".rjust(5), "\n",
-			str(resposta[i]).rjust(5), "\n"
-		)
+	if mostrar:
+		for i, v in enumerate(lista):
+			print(
+				v[0].rjust(2*3), "\n",
+				v[1], v[2].rjust(3), "\n", "-----".rjust(5), "\n",
+        str(resposta[i]).rjust(5), "\n"
+      )
+	else:
+		for i, v in enumerate(lista):
+			print(
+				v[0].rjust(2*3), "\n",
+				v[1], v[2].rjust(3), "\n", "-----".rjust(5), "\n"
+      )
+			#print("    ", end=" ")
 	
 	# Erros
 	if len(problems) > 5:
