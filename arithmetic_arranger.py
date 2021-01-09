@@ -20,8 +20,8 @@ def arithmetic_arranger(problems, mostrar=False):
 		texto += "\n"
 		# Operador e segundo numero
 		for os in range(len(operador)):
-			texto += f'{operador[os]}{segundo[os].rjust(3)}    '
-		
+			texto += f'{operador[os]} {segundo[os].rjust(3)}    '
+		texto += "\n"
 		# Hifens
 		for m in maxLen:
 			if m == 1:
@@ -32,7 +32,7 @@ def arithmetic_arranger(problems, mostrar=False):
 				texto += f'{"-" * (m + 2)}    '
 			elif m == 4:
 				texto += f'{"-" * (m + 1)}    '
-		
+		texto += "\n"
 		# Resposta
 		for r in resposta:
 			texto += f'{str(r).rjust(5)}    '
@@ -41,23 +41,23 @@ def arithmetic_arranger(problems, mostrar=False):
 		texto = ""
 		# Primeiro numero
 		for p in primeiro:
-			texto += f'{p.rjust(5)}    \n'
-		
+			texto += f'{p.rjust(5)}    '
+		texto += "\n"
 		# Operador e segundo numero
 		for os in range(len(operador)):
-			texto += f'{operador[os]}{segundo[os].rjust(3)}    \n'
-		
+			texto += f'{operador[os]} {segundo[os].rjust(3)}    '
+		texto += "\n"
 		# Hifens
 		for m in maxLen:
 			if m == 1:
-				texto += f'{"-" * (m + 4)}    \n'
+				texto += f'{"-" * (m + 4)}    '
 			elif m == 2:
-				texto += f'{"-" * (m + 3)}    \n'
+				texto += f'{"-" * (m + 3)}    '
 			elif m == 3:
-				texto += f'{"-" * (m + 2)}    \n'
+				texto += f'{"-" * (m + 2)}    '
 			elif m == 4:
-				texto += f'{"-" * (m + 1)}    \n'
-
+				texto += f'{"-" * (m + 1)}    '
+		texto += "\n"
 	# Erros
 	if len(problems) > 5:
 		return("Error: Too many problems.")
@@ -77,4 +77,4 @@ def arithmetic_arranger(problems, mostrar=False):
 			return("Error: Operator must be '+' or '-'.")
 	return texto
 	
-print(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"], True))
+print(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]))
