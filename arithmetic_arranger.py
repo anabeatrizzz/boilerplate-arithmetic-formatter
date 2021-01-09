@@ -16,26 +16,26 @@ def arithmetic_arranger(problems, mostrar=False):
 		
 		# Primeiro numero
 		for p in primeiro:
-			texto += f'{p.rjust(5)}    \n'
-		
+			texto += f'{p.rjust(5)}    '
+		texto += "\n"
 		# Operador e segundo numero
 		for os in range(len(operador)):
-			texto += f'{operador[os] segundo[os].rjust(3)}    \n'
+			texto += f'{operador[os]}{segundo[os].rjust(3)}    '
 		
 		# Hifens
 		for m in maxLen:
 			if m == 1:
-				texto += f'{"-" * (m + 4)}    \n'
+				texto += f'{"-" * (m + 4)}    '
 			elif m == 2:
-				texto += f'{"-" * (m + 3)}    \n'
+				texto += f'{"-" * (m + 3)}    '
 			elif m == 3:
-				texto += f'{"-" * (m + 2)}    \n'
+				texto += f'{"-" * (m + 2)}    '
 			elif m == 4:
-				texto += f'{"-" * (m + 1)}    \n'
+				texto += f'{"-" * (m + 1)}    '
 		
 		# Resposta
 		for r in resposta:
-			texto += f'{str(r).rjust(5)}    \n'
+			texto += f'{str(r).rjust(5)}    '
 		
 	else:
 		texto = ""
@@ -45,7 +45,7 @@ def arithmetic_arranger(problems, mostrar=False):
 		
 		# Operador e segundo numero
 		for os in range(len(operador)):
-			texto += f'{operador[os] segundo[os].rjust(3)}    \n'
+			texto += f'{operador[os]}{segundo[os].rjust(3)}    \n'
 		
 		# Hifens
 		for m in maxLen:
@@ -75,6 +75,6 @@ def arithmetic_arranger(problems, mostrar=False):
 	for c in problems:
 		if ("/" or "*" or "**") in c:
 			return("Error: Operator must be '+' or '-'.")
-  return texto
+	return texto
 	
-#arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"], True)
+print(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"], True))
