@@ -9,55 +9,42 @@ def arithmetic_arranger(problems, mostrar=False):
 	for c in range(len(segundo)):
 		lenSegundo = len(segundo[c])
 		lenPrimeiro = len(primeiro[c])
+		# Colocando maior len entre o primeiro e segundo operador
 		maxLen.append(max(lenSegundo, lenPrimeiro))
 		
 	if mostrar:
 		resposta = [eval(r) for r in problems]
 		
 		# Primeiro numero
-		for p in primeiro:
-			texto += f'{p.rjust(5)}    '
+		for i, m in enumerate(maxLen):
+			texto += f'{primeiro[i].rjust(m + 2)}    '
 		texto += "\n"
 		# Operador e segundo numero
-		for os in range(len(operador)):
-			texto += f'{operador[os]} {segundo[os].rjust(3)}    '
+		for i, m in enumerate(maxLen):
+			texto += f'{operador[i]} {segundo[i].rjust(m)}    '
 		texto += "\n"
 		# Hifens
 		for m in maxLen:
-			if m == 1:
-				texto += f'{"-" * (m + 4)}    '
-			elif m == 2:
-				texto += f'{"-" * (m + 3)}    '
-			elif m == 3:
-				texto += f'{"-" * (m + 2)}    '
-			elif m == 4:
-				texto += f'{"-" * (m + 1)}    '
+			texto += f'{"-" * (m + 2)}    '
 		texto += "\n"
 		# Resposta
-		for r in resposta:
-			texto += f'{str(r).rjust(5)}    '
+		for i, m in enumerate(maxLen):
+			texto += f'{str(resposta[i]).rjust(m + 2)}    '
 		
 	else:
 		texto = ""
 		# Primeiro numero
-		for p in primeiro:
-			texto += f'{p.rjust(5)}    '
+		for i, m in enumerate(maxLen):
+			texto += f'{primeiro[i].rjust(m + 2)}    '
 		texto += "\n"
 		# Operador e segundo numero
-		for os in range(len(operador)):
-			texto += f'{operador[os]} {segundo[os].rjust(3)}    '
+		for i, m in enumerate(maxLen):
+			texto += f'{operador[i]} {segundo[i].rjust(m)}    '
 		texto += "\n"
 		# Hifens
 		for m in maxLen:
-			if m == 1:
-				texto += f'{"-" * (m + 4)}    '
-			elif m == 2:
-				texto += f'{"-" * (m + 3)}    '
-			elif m == 3:
-				texto += f'{"-" * (m + 2)}    '
-			elif m == 4:
-				texto += f'{"-" * (m + 1)}    '
-		texto += "\n"
+			texto += f'{"-" * (m + 2)}    '
+	
 	# Erros
 	if len(problems) > 5:
 		return("Error: Too many problems.")
