@@ -18,32 +18,39 @@ def arithmetic_arranger(problems, mostrar=False):
 		# Primeiro numero
 		for i, m in enumerate(maxLen):
 			texto += f'{primeiro[i].rjust(m + 2)}    '
-		texto += "\n"
+		texto = texto.rstrip()
+		texto += '\n'
 		# Operador e segundo numero
 		for i, m in enumerate(maxLen):
 			texto += f'{operador[i]} {segundo[i].rjust(m)}    '
+		texto = texto.rstrip()
 		texto += "\n"
 		# Hifens
 		for m in maxLen:
 			texto += f'{"-" * (m + 2)}    '
+		texto = texto.rstrip()
 		texto += "\n"
 		# Resposta
 		for i, m in enumerate(maxLen):
 			texto += f'{str(resposta[i]).rjust(m + 2)}    '
+		texto = texto.rstrip()
 		
 	else:
 		texto = ""
 		# Primeiro numero
 		for i, m in enumerate(maxLen):
 			texto += f'{primeiro[i].rjust(m + 2)}    '
+		texto = texto.rstrip()
 		texto += "\n"
 		# Operador e segundo numero
 		for i, m in enumerate(maxLen):
 			texto += f'{operador[i]} {segundo[i].rjust(m)}    '
+		texto = texto.rstrip()
 		texto += "\n"
 		# Hifens
 		for m in maxLen:
 			texto += f'{"-" * (m + 2)}    '
+		texto = texto.rstrip()
 	
 	# Erros
 	if len(problems) > 5:
@@ -64,4 +71,4 @@ def arithmetic_arranger(problems, mostrar=False):
 			return("Error: Operator must be '+' or '-'.")
 	return texto
 	
-print(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]))
+#print(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]))
