@@ -1,34 +1,39 @@
-### Assignment
+### [README original](https://github.com/freeCodeCamp/boilerplate-arithmetic-formatter/blob/master/README.md)
 
-Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
+### Tarefa
+
+Os estudantes do ensino fundamental frequentemente escrevem problemas aritméticos verticalmente para ficar fácil de resolver. Por exemplo, "235 + 52" fica:
+
 ```
   235
 +  52
 -----
 ```
 
-Create a function that receives a list of strings that are arithmetic problems and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to `True`, the answers should be displayed.
+Crie uma função que recebe uma lista de strings que são problemas aritméticos e retorna os problemas organizados verticalmente e lado a lado. A função deve ter um segundo argumento opcional. Quando este for `True`, as respostas devem ser mostradas.
 
-### For example
+### Por exemplo
 
-Function Call:
+Chamando a função:
+
 ```py
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 ```
 
-Output:
+Resultado:
+
 ```
    32      3801      45      123
 + 698    -    2    + 43    +  49
 -----    ------    ----    -----
 ```
 
-Function Call:
+Chamando a função:
 ```py
 arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 ```
 
-Output:
+Resultado:
 ```
   32         1      9999      523
 +  8    - 3801    + 9999    -  49
@@ -36,34 +41,33 @@ Output:
   40     -3800     19998      474
 ```
 
-### Rules
+### Regras
 
-The function will return the correct conversion if the supplied problems are properly formatted, otherwise, it will **return** a **string** that describes an error that is meaningful to the user.  
+A função retornará a conversão correta se os problemas fornecidos estiverem formatados corretamente, se não, ela **retornará** uma **string** que descreve um erro descritivo para o usuário.
 
-
-* Situations that will return an error:
-  * If there are **too many problems** supplied to the function. The limit is **five**, anything more will return:
+* Situações em que um erro é retornado:
+  * Se **muitos problemas** forem fornecidos. O limite é **cinco**, mais do que isso a função retornará:
     `Error: Too many problems.`
-  * The appropriate operators the function will accept are **addition** and **subtraction**. Multiplication and division will return an error. Other operators not mentioned in this bullet point will not need to be tested. The error returned will be:
+  * Os operadores que a função aceitará são **adição** e **subtração**. Multiplicação e divisão retornarão um erro. Outros operadores não mencionados aqui não precisarão ser testados. O erro retornado será:
     `Error: Operator must be '+' or '-'.`
-  * Each number (operand) should only contain digits. Otherwise, the function will return:
+  * Cada numero (operando) deve conter apenas dígitos. Se não, a função retornará:
     `Error: Numbers must only contain digits.`
-  * Each operand (aka number on each side of the operator) has a max of four digits in width. Otherwise, the error string returned will be:
+  * Cada operando (vulgo numero em cada lado do operador) precisa ter quatro dígitos. Se não, a string de erro retornada será:
     `Error: Numbers cannot be more than four digits.`
-*  If the user supplied the correct format of problems, the conversion you return will follow these rules:
-    * There should be a single space between the operator and the longest of the two operands, the operator will be on the same line as the second operand, both operands will be in the same order as provided (the first will be the top one and the second will be the bottom.
-    * Numbers should be right-aligned.
-    * There should be four spaces between each problem.
-    * There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
+*  Se o usuário escreveu os problemas corretamente, a conversão retornada será:
+    * Deverá ter um único espaço entre o operador e o maior dos operandos, o operador estará na mesma linha que o segundo operando, os dois operandos estarão na mesma ordem fornecida (o primeiro no topo e o segundo embaixo).
+    * Números devem estar alinhados na direita.
+    * Deverá ter quatro espaços entre cada problema.
+    * Deverá ter hifens embaixo de cada problema. Os hifens devem preencher todo o problema individualmente. (O exemplo acima mostra como deve ser feito.)
 
-### Development
+### Desenvolvimento
 
-Write your code in `arithmetic_arranger.py`. For development, you can use `main.py` to test your `arithmetic_arranger()` function. Click the "run" button and `main.py` will run.
+Escreva seu código em `arithmetic_arranger.py`. Para desenvolver, você pode usar `main.py` para testar sua função `arithmetic_arranger()`. Clique no botão "run" e `main.py` executará.
 
-### Testing 
+### Testando
 
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
+A unidade de testes para este projeto está em `test_module.py`. Importamos os testes de `test_module.py` para `main.py` para sua conveniência. Os testes executarão automaticamente toda vez que você apertar o botão "run".
 
-### Submitting
+### Enviando
 
-Copy your project's URL and submit it to freeCodeCamp.
+Copie a URL do seu projeto e envie para freeCodeCamp.
